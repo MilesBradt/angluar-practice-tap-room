@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+
+#header-img {
+  border-radius: 10%;
+}
+
+#header-div {
+  color: #260302;
+  background-color: #D9C6B2;
+  padding-bottom: 15px;
+}
+
+.admin-controls {
+  text-align: center;
+}
+
+ul {
+  list-style-position: inside;
+}
+
+body {
+  color: #D9C6B2;
+  background-image: linear-gradient(to bottom, #591F0E, #260302);
+  padding-bottom: 50%;
+}

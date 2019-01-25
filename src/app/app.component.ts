@@ -10,26 +10,38 @@ import { FormControl } from '@angular/forms';
 export class AppComponent {
   title = 'tap-room';
   menus:  Menu [] = [
-    new Menu ("ginger","Dr.Kombucha", 6.99, 124, false),
-    new Menu ("superBerry","Dr.Kombucha", 4.99, 124, false),
-    new Menu ("trilogy","Synergy", 7.99, 124, false),
-    new Menu ("trilogy","blueberry", 2.99, 10, false),
+    new Menu ("Trilogy","Synergy", 3.99, 25, false),
+    new Menu ("Multi-Green","Synergy", 3.99, 100, false),
+    new Menu ("All Day IPA","Founders", 5.99, 34, false),
+    new Menu ("Two Hearted Ale","Bell's", 4.99, 10, false),
   ]
-  currentTime = new Date();
- minutes: number = this.currentTime.getMinutes();
- time: number = this.currentTime.getHours();
 
-selectedTime = null;
-happyHour(currentTime) {
-  this.selectedTime = true;
-  console.log(currentTime);
-  let timeNow = currentTime;
-  if (currentTime > 12){
-    timeNow -= 12;
+
+  dateMessage: string;
+
+  constructor() {
+    setInterval(() => {
+      let currentDate = new Date();
+      this.dateMessage = currentDate.toLocaleTimeString();
+    }, 1000)
   }
-  console.log(timeNow);
-  return timeNow;
-}
+
+  currentTime = new Date();
+  minutes: number = this.currentTime.getMinutes();
+  time: number = this.currentTime.getHours();
+  seconds: number = this.currentTime.getSeconds();
+
+  selectedTime = null;
+  happyHour(currentTime) {
+    this.selectedTime = true;
+    console.log(currentTime);
+    let timeNow = currentTime;
+    if (currentTime > 12){
+      timeNow -= 12;
+    }
+    console.log(timeNow);
+    return timeNow;
+  }
 
   newDrink(name, brand, price) {
     console.log(name, brand, price)
